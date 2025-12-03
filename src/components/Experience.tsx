@@ -2,18 +2,20 @@ import { Briefcase, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    role: "Web Development Intern",
-    company: "Tech Company",
-    period: "Jan 2024 - Mar 2024",
-    description: "Developed responsive web applications using React and collaborated with the design team to implement UI/UX improvements.",
-    tools: ["React", "JavaScript", "Git", "Figma"],
+    role: "Full Stack Development Intern",
+    company: "Cognifyz Technologies",
+    period: "Feb 2025 – Mar 2025",
+    location: "Remote",
+    description: "Enhanced frontend and backend development skills by building responsive web applications and RESTful APIs. Collaborated with the team on various projects involving modern web technologies.",
+    tools: ["React.js", "Node.js", "Express", "MongoDB", "Git"],
   },
   {
-    role: "Software Engineering Trainee",
-    company: "Training Institute",
-    period: "Jun 2023 - Dec 2023",
-    description: "Completed intensive training in full-stack development, database management, and software engineering principles.",
-    tools: ["Java", "Python", "MySQL", "HTML/CSS"],
+    role: "Web Development Intern",
+    company: "CodSoft",
+    period: "Oct 2024 – Nov 2024",
+    location: "Remote",
+    description: "Developed multiple web projects including a functional calculator, responsive landing pages, and a personal portfolio. Strengthened fundamentals in front-end development and responsive design.",
+    tools: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
   },
 ];
 
@@ -43,6 +45,7 @@ const Experience = () => {
                   <div>
                     <h3 className="font-display text-xl font-semibold">{exp.role}</h3>
                     <p className="text-primary font-medium">{exp.company}</p>
+                    <p className="text-muted-foreground text-sm">{exp.location}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground text-sm md:shrink-0">

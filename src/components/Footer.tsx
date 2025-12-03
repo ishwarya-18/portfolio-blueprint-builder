@@ -1,9 +1,9 @@
-import { Github, Linkedin, Instagram, Heart } from "lucide-react";
+import { Github, Linkedin, Code, Heart } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Github, href: "https://github.com/ishwarya-18", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/ishwarya-01i08s05h/", label: "LinkedIn" },
+  { icon: Code, href: "https://leetcode.com/u/ishwarya_18/", label: "LeetCode" },
 ];
 
 const Footer = () => {
@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <span>© {currentYear} Your Name. Built with</span>
+            <span>© {currentYear} Ishwarya R. Built with</span>
             <Heart className="w-4 h-4 text-primary fill-primary" />
           </div>
 

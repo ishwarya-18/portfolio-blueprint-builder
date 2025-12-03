@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, Mail, MapPin } from "lucide-react";
+import { Send, Mail, MapPin, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -52,8 +52,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:your.email@example.com" className="font-medium hover:text-primary transition-colors">
-                    your.email@example.com
+                  <a href="mailto:ishwaryarajendran77@gmail.com" className="font-medium hover:text-primary transition-colors">
+                    ishwaryarajendran77@gmail.com
                   </a>
                 </div>
               </div>
@@ -64,7 +64,41 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">Your City, Country</p>
+                  <p className="font-medium">Greater Coimbatore Area, India</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-primary/10 rounded-xl">
+                  <Linkedin className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">LinkedIn</p>
+                  <a 
+                    href="https://www.linkedin.com/in/ishwarya-01i08s05h/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-medium hover:text-primary transition-colors"
+                  >
+                    Connect with me
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-primary/10 rounded-xl">
+                  <Github className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">GitHub</p>
+                  <a 
+                    href="https://github.com/ishwarya-18" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-medium hover:text-primary transition-colors"
+                  >
+                    View my code
+                  </a>
                 </div>
               </div>
             </div>
