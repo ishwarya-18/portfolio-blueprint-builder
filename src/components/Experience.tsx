@@ -7,7 +7,7 @@ const experiences = [
     period: "Feb 2025 – Mar 2025",
     location: "Remote",
     description: "Enhanced frontend and backend development skills by building responsive web applications and RESTful APIs. Collaborated with the team on various projects involving modern web technologies.",
-    tools: ["React.js", "Node.js", "Express", "MongoDB", "Git"],
+    tools: ["React.js", "Node.js", "Express", "PostgreSQL", "Git"],
   },
   {
     role: "Web Development Intern",

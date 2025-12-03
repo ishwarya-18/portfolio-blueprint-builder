@@ -13,10 +13,10 @@ const Footer = () => {
     <footer className="py-12 px-4 border-t border-border/50">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <span>© {currentYear} Ishwarya R. Built with</span>
-            <Heart className="w-4 h-4 text-primary fill-primary" />
+          <div className="text-muted-foreground text-sm">
+            © {currentYear} Ishwarya R.
           </div>
+
 
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (

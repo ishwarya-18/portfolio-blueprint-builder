@@ -30,7 +30,7 @@ const Navbar = () => {
     >
       <nav className="container-custom py-4 px-4 md:px-8 flex items-center justify-between">
         <a href="#" className="font-display text-xl font-bold text-gradient">
-          YN
+          IR
         </a>
 
         {/* Desktop Navigation */}
