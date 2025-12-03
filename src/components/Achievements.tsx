@@ -1,20 +1,23 @@
-import { Award, Medal, Trophy } from "lucide-react";
+import { Award, Trophy, GraduationCap } from "lucide-react";
 
 const achievements = [
   {
-    title: "NPTEL Certification",
-    description: "Successfully completed NPTEL course in Data Structures and Algorithms with distinction.",
+    title: "NPTEL – Introduction to IoT",
+    description: "Completed NPTEL certification in Introduction to Internet of Things with a score of 85/100, demonstrating strong understanding of IoT concepts.",
     icon: Award,
+    date: "Oct 2025",
   },
   {
-    title: "Web Development Certificate",
-    description: "Completed comprehensive web development bootcamp covering modern frameworks and best practices.",
-    icon: Medal,
-  },
-  {
-    title: "Hackathon Participant",
-    description: "Participated in multiple coding hackathons and developed innovative solutions under time constraints.",
+    title: "Adobe India Hackathon",
+    description: "Participated in the Adobe India Hackathon, developing innovative solutions and collaborating with talented developers under competitive conditions.",
     icon: Trophy,
+    date: "Aug 2025",
+  },
+  {
+    title: "Academic Excellence",
+    description: "Maintaining a CGPA of 8.68 in B.Tech AI & Data Science. Topped Chemistry in HSC with 90.44% overall score.",
+    icon: GraduationCap,
+    date: "Ongoing",
   },
 ];
 
@@ -39,6 +42,7 @@ const Achievements = () => {
               <div className="inline-flex p-4 bg-primary/10 rounded-2xl mb-4">
                 <achievement.icon className="w-8 h-8 text-primary" />
               </div>
+              <p className="text-xs text-primary font-medium mb-2">{achievement.date}</p>
               <h3 className="font-display text-lg font-semibold mb-3">
                 {achievement.title}
               </h3>

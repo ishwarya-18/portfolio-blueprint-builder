@@ -1,27 +1,40 @@
 import { ExternalLink, Github, Folder } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with cart functionality, user authentication, and payment integration.",
-    tech: ["React", "Node.js", "MySQL", "Tailwind"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "LearnQuest – E-Learning Platform",
+    description: "Interactive e-learning platform featuring quizzes, mini-games, video lessons, and gamification with XP points, badges, and streaks. Includes admin, teacher, and student dashboards.",
+    tech: ["Next.js", "TypeScript", "React"],
+    github: "https://github.com/ishwarya-18",
+    live: null,
   },
   {
-    title: "Task Management App",
-    description: "A productivity application for organizing tasks with drag-and-drop, categories, and deadline tracking.",
-    tech: ["React", "JavaScript", "CSS", "Firebase"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Loan Approval Prediction",
+    description: "ML model that predicts loan approval status using applicant features like income, employment type, and credit history. Includes data preprocessing, encoding, and visualization.",
+    tech: ["Python", "Scikit-Learn", "Pandas", "Seaborn"],
+    github: "https://github.com/ishwarya-18",
+    live: null,
+  },
+  {
+    title: "Hall Booking Application",
+    description: "Full-stack application for managing hall bookings with user authentication, real-time availability tracking, and a feedback system.",
+    tech: ["React", "Node.js", "Express", "PostgreSQL"],
+    github: "https://github.com/ishwarya-18",
+    live: null,
+  },
+  {
+    title: "To-Do List with Admin Dashboard",
+    description: "Task management app with user authentication, comprehensive task APIs, and database integration for persistent storage.",
+    tech: ["React", "Node.js", "Express", "PostgreSQL"],
+    github: "https://github.com/ishwarya-18",
+    live: null,
   },
   {
     title: "Weather Dashboard",
-    description: "Real-time weather application with location-based forecasts, interactive maps, and data visualization.",
-    tech: ["Python", "API", "HTML", "CSS"],
-    github: "https://github.com",
-    live: null,
+    description: "Real-time weather application that fetches and displays weather data for any city using the OpenWeather API with a clean, responsive interface.",
+    tech: ["React", "Node.js", "OpenWeather API"],
+    github: "https://github.com/ishwarya-18",
+    live: "https://lnkd.in/g4_hs4b5",
   },
 ];
 

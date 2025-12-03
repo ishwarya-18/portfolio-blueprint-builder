@@ -21,15 +21,15 @@ const Hero = () => {
         
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up animation-delay-100">
           Hi, I'm{" "}
-          <span className="text-gradient glow-text">Your Name</span>
+          <span className="text-gradient glow-text">Ishwarya R</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-4 animate-fade-up animation-delay-200">
-          Aspiring Software Developer
+          Pre-final Year Student | UI/UX & Full-Stack Enthusiast
         </p>
         
         <p className="text-lg text-muted-foreground/80 max-w-xl mx-auto mb-10 animate-fade-up animation-delay-300">
-          Passionate about building real-world applications and turning ideas into elegant, functional code.
+          Passionate about crafting intuitive user experiences, building scalable web applications, and solving real-world problems through code.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up animation-delay-400">
