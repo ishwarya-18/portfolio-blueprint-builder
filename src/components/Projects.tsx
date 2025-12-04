@@ -12,6 +12,7 @@ const projects = [
     github: "https://github.com/ishwarya-18/LearnQuest",
     live: null,
     image: "/images/learn.png",
+    efficiency: 92,
   },
   {
     title: "Loan Approval Prediction",
@@ -21,6 +22,7 @@ const projects = [
     github: "https://github.com/ishwarya-18/Loan-Approval-Prediction",
     live: "https://loanpredict-website.vercel.app/",
     image: "/images/loan.png",
+    efficiency: 87,
   },
   {
     title: "Hall Booking Application",
@@ -30,6 +32,7 @@ const projects = [
     github: "https://github.com/ishwarya-18/Hall-booking-application",
     live: null,
     image: "/images/hall.png",
+    efficiency: 85,
   },
   {
     title: "To-Do List with Admin Dashboard",
@@ -39,6 +42,7 @@ const projects = [
     github: "https://github.com/ishwarya-18/Todo_application",
     live: null,
     image: "/images/todo.png",
+    efficiency: 80,
   },
   {
     title: "Weather Dashboard",
@@ -48,6 +52,7 @@ const projects = [
     github: "https://github.com/ishwarya-18/Weather-Dashboard",
     live: "https://weather-dashboard-1-769j.onrender.com/",
     image: "/images/weather.png",
+    efficiency: 88,
   },
 ];
 
@@ -59,6 +64,7 @@ interface Project {
   github: string;
   live: string | null;
   image: string;
+  efficiency: number;
 }
 
 const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => void }) => {
@@ -188,6 +194,20 @@ const Projects = () => {
               <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
                 {project.description}
               </p>
+
+              {/* Efficiency Meter */}
+              <div className="mb-4">
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-xs text-muted-foreground">Efficiency</span>
+                  <span className="text-xs font-medium text-primary">{project.efficiency}%</span>
+                </div>
+                <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full transition-all duration-500"
+                    style={{ width: `${project.efficiency}%` }}
+                  />
+                </div>
+              </div>
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((t) => (
