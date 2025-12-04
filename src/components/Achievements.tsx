@@ -1,4 +1,4 @@
-import { Award, Trophy, GraduationCap, BadgeCheck } from "lucide-react";
+import { Award, Trophy, GraduationCap, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -23,18 +23,25 @@ const achievements = [
   },
 ];
 
-const skills = [
-  { name: "Java", color: "from-orange-500 to-red-500" },
-  { name: "Python", color: "from-blue-500 to-yellow-500" },
-  { name: "C", color: "from-blue-600 to-blue-400" },
-  { name: "React", color: "from-cyan-400 to-blue-500" },
-  { name: "Node.js", color: "from-green-500 to-green-400" },
-  { name: "Express.js", color: "from-gray-600 to-gray-400" },
-  { name: "PostgreSQL", color: "from-blue-600 to-cyan-500" },
-  { name: "MySQL", color: "from-orange-500 to-blue-600" },
-  { name: "HTML", color: "from-orange-500 to-orange-400" },
-  { name: "CSS", color: "from-blue-500 to-blue-400" },
-  { name: "Figma", color: "from-purple-500 to-pink-500" },
+const certificates = [
+  {
+    title: "Flutter Development",
+    platform: "Simplilearn",
+    image: "/certificates/flutter.png",
+    link: "#",
+  },
+  {
+    title: "Java Programming",
+    platform: "Coursera",
+    image: "/certificates/java.png",
+    link: "#",
+  },
+  {
+    title: "Web Development",
+    platform: "Udemy",
+    image: "/certificates/web-dev.png",
+    link: "#",
+  },
 ];
 
 const Achievements = () => {
@@ -79,7 +86,7 @@ const Achievements = () => {
           ))}
         </div>
 
-        {/* Skills Certifications Section */}
+        {/* Certificates Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -87,26 +94,43 @@ const Achievements = () => {
           className="text-center mb-8"
         >
           <p className="text-primary font-medium tracking-wider uppercase text-sm mb-3">
-            Technical Proficiency
+            Course Completions
           </p>
-          <h3 className="font-display text-2xl md:text-3xl font-bold">Certified Skills</h3>
+          <h3 className="font-display text-2xl md:text-3xl font-bold">Certificates</h3>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
-              className="group relative"
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {certificates.map((cert, index) => (
+            <motion.a
+              key={cert.title}
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+              className="group glass-card-hover overflow-hidden"
             >
-              <div className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg`} />
-              <div className="relative glass-card-hover px-5 py-3 rounded-xl flex items-center gap-2">
-                <BadgeCheck className="w-4 h-4 text-primary" />
-                <span className="font-medium">{skill.name}</span>
+              <div className="aspect-video bg-muted/50 relative overflow-hidden">
+                <img 
+                  src={cert.image} 
+                  alt={cert.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.currentTarget.src = '/placeholder.svg';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
+                  <span className="text-primary flex items-center gap-1 text-sm font-medium">
+                    View Certificate <ExternalLink className="w-3 h-3" />
+                  </span>
+                </div>
               </div>
-            </motion.div>
+              <div className="p-4">
+                <h4 className="font-semibold mb-1">{cert.title}</h4>
+                <p className="text-sm text-muted-foreground">{cert.platform}</p>
+              </div>
+            </motion.a>
           ))}
         </div>
       </div>
