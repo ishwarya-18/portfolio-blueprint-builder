@@ -1,73 +1,73 @@
-import { Code2, Lightbulb, Target, GraduationCap } from "lucide-react";
+import { Code2, Lightbulb, Target, GraduationCap, Briefcase, School, Building2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const journey = [
+  { icon: School, title: "Girls' Higher Secondary School", subtitle: "HSC - 90.44% | Chemistry Topper", period: "2021 - 2023" },
+  { icon: GraduationCap, title: "Bannari Amman Institute of Technology", subtitle: "B.Tech AI & Data Science | CGPA: 8.68", period: "2023 - 2027" },
+  { icon: Building2, title: "CodSoft - Web Development Intern", subtitle: "HTML, CSS, JavaScript Projects", period: "Oct - Nov 2024" },
+  { icon: Briefcase, title: "Cognifyz - Full Stack Intern", subtitle: "React.js, Node.js Development", period: "Feb - Mar 2025" },
+];
+
+const stats = [
+  { value: "5+", label: "Projects" },
+  { value: "10K+", label: "Lines of Code" },
+  { value: "8.68", label: "CGPA" },
+  { value: "2", label: "Internships" },
+];
 
 const About = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section id="about" className="section-padding">
-      <div className="container-custom">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left - Image/Visual */}
-          <div className="relative animate-fade-up">
-            <div className="aspect-square max-w-md mx-auto relative">
+      <div className="container-custom" ref={ref}>
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <motion.div initial={{ opacity: 0, x: -30 }} animate={isVisible ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}>
+            <p className="text-primary font-medium tracking-wider uppercase text-sm mb-3">My Journey</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">From Student to Developer</h2>
+            <div className="grid grid-cols-4 gap-3 mb-8">
+              {stats.map((stat, i) => (
+                <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ delay: i * 0.1 }} className="text-center glass-card p-3 rounded-xl">
+                  <p className="font-display text-xl md:text-2xl font-bold text-primary">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="relative pl-8 border-l-2 border-primary/30 space-y-4">
+              {journey.map((item, i) => (
+                <motion.div key={item.title} initial={{ opacity: 0, x: -20 }} animate={isVisible ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.3 + i * 0.1 }} className="relative">
+                  <div className="absolute -left-[41px] p-2 bg-primary/10 rounded-full border-2 border-primary"><item.icon className="w-4 h-4 text-primary" /></div>
+                  <div className="glass-card-hover p-4 rounded-xl">
+                    <p className="text-xs text-primary font-medium mb-1">{item.period}</p>
+                    <h3 className="font-semibold mb-1">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 30 }} animate={isVisible ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="space-y-6">
+            <div className="aspect-square max-w-xs mx-auto relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl transform rotate-6" />
               <div className="absolute inset-0 glass-card rounded-3xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center">
-                    <span className="text-5xl font-display font-bold text-primary-foreground">IR</span>
+                <div className="text-center p-6">
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center">
+                    <span className="text-3xl font-display font-bold text-primary-foreground">IR</span>
                   </div>
-                  <p className="text-primary font-medium">She/Her</p>
-                  <p className="text-muted-foreground text-sm mt-1">Greater Coimbatore Area</p>
+                  <h3 className="font-display text-lg font-bold">Ishwarya R</h3>
+                  <p className="text-primary font-medium text-sm">She/Her</p>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Right - Content */}
-          <div className="space-y-6 animate-fade-up animation-delay-200">
-            <div>
-              <p className="text-primary font-medium tracking-wider uppercase text-sm mb-3">
-                About Me
-              </p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                Turning Ideas Into Reality
-              </h2>
+            <p className="text-muted-foreground leading-relaxed">I'm a pre-final year B.Tech student in AI & Data Science at Bannari Amman Institute of Technology. My journey began with curiosity and evolved into a passion for building user-centric applications.</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="glass-card-hover p-4 rounded-xl"><Target className="w-6 h-6 text-primary mb-2" /><h3 className="font-semibold mb-1">Goal-Oriented</h3><p className="text-sm text-muted-foreground">Production-ready apps</p></div>
+              <div className="glass-card-hover p-4 rounded-xl"><Lightbulb className="w-6 h-6 text-primary mb-2" /><h3 className="font-semibold mb-1">Creative Thinker</h3><p className="text-sm text-muted-foreground">Intuitive UX design</p></div>
+              <div className="glass-card-hover p-4 rounded-xl"><Code2 className="w-6 h-6 text-primary mb-2" /><h3 className="font-semibold mb-1">Full-Stack Dev</h3><p className="text-sm text-muted-foreground">End-to-end development</p></div>
+              <div className="glass-card-hover p-4 rounded-xl"><GraduationCap className="w-6 h-6 text-primary mb-2" /><h3 className="font-semibold mb-1">Quick Learner</h3><p className="text-sm text-muted-foreground">Adapting fast</p></div>
             </div>
-
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              I'm a pre-final year B.Tech student in Artificial Intelligence & Data Science at 
-              Bannari Amman Institute of Technology, maintaining a CGPA of 8.68. My journey in tech 
-              began with a curiosity for how things work, and has evolved into a deep passion for 
-              building user-centric applications.
-            </p>
-
-            <p className="text-muted-foreground leading-relaxed">
-              From designing interactive e-learning platforms to predicting loan approvals with ML models, 
-              I love tackling challenges that blend creativity with technical problem-solving. When I'm not 
-              coding, you'll find me exploring new frameworks or solving problems on LeetCode.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="glass-card-hover p-4 rounded-xl">
-                <Target className="w-6 h-6 text-primary mb-2" />
-                <h3 className="font-semibold mb-1">Goal-Oriented</h3>
-                <p className="text-sm text-muted-foreground">Building production-ready applications</p>
-              </div>
-              <div className="glass-card-hover p-4 rounded-xl">
-                <Lightbulb className="w-6 h-6 text-primary mb-2" />
-                <h3 className="font-semibold mb-1">Creative Thinker</h3>
-                <p className="text-sm text-muted-foreground">Designing intuitive user experiences</p>
-              </div>
-              <div className="glass-card-hover p-4 rounded-xl">
-                <Code2 className="w-6 h-6 text-primary mb-2" />
-                <h3 className="font-semibold mb-1">Full-Stack Dev</h3>
-                <p className="text-sm text-muted-foreground">End-to-end application development</p>
-              </div>
-              <div className="glass-card-hover p-4 rounded-xl">
-                <GraduationCap className="w-6 h-6 text-primary mb-2" />
-                <h3 className="font-semibold mb-1">Quick Learner</h3>
-                <p className="text-sm text-muted-foreground">Adapting to new technologies fast</p>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

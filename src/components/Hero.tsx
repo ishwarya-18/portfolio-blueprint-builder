@@ -1,61 +1,120 @@
-import { useState, useEffect } from "react";
-import { ArrowDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  const [displayText, setDisplayText] = useState("");
-  const fullText = "Ishwarya R";
-
-  // Typing effect
-  useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      setDisplayText(fullText.slice(0, currentIndex + 1));
-      currentIndex++;
-      if (currentIndex === fullText.length) clearInterval(interval);
-    }, 150); // typing speed in ms
-    return () => clearInterval(interval);
-  }, []);
-
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden section-padding">
-      {/* Background orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse animation-delay-500" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float animation-delay-2000" />
+      </div>
 
-      <div className="container-custom relative z-10 text-center">
-        <p className="text-primary font-medium tracking-wider uppercase text-sm mb-4 animate-fade-up">
-          Welcome to my portfolio
-        </p>
+      <div className="container-custom text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-primary font-medium tracking-wider uppercase text-sm mb-4"
+          >
+            Hello, I'm
+          </motion.p>
+          
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+          >
+            <span className="text-gradient glow-text">Ishwarya R</span>
+          </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto"
+          >
+            Pre-final Year Student | UI/UX & Full-Stack Enthusiast
+          </motion.p>
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed"
+          >
+            Passionate about crafting intuitive user experiences, building scalable web applications, 
+            and solving real-world problems through code.
+          </motion.p>
 
-        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up animation-delay-100">
-          Hi, I'm{" "}
-          <span className="text-gradient glow-text">{displayText}</span>
-        </h1>
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="flex justify-center gap-4 mb-10"
+          >
+            <a
+              href="https://github.com/ishwarya-18"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 glass-card-hover rounded-full hover:text-primary transition-colors"
+              aria-label="GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ishwarya-01i08s05h/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 glass-card-hover rounded-full hover:text-primary transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:ishwaryarajendran77@gmail.com"
+              className="p-3 glass-card-hover rounded-full hover:text-primary transition-colors"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          </motion.div>
 
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-4 animate-fade-up animation-delay-200">
-          Pre-final Year Student | UI/UX & Full-Stack Enthusiast
-        </p>
-
-        <p className="text-lg text-muted-foreground/80 max-w-xl mx-auto mb-10 animate-fade-up animation-delay-300">
-          Passionate about crafting intuitive user experiences, building scalable web applications, and solving real-world problems through code.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up animation-delay-400">
-          <Button 
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
             onClick={scrollToProjects}
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-all hover:gap-3"
           >
             View My Projects
-            <ArrowDown className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
+            <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+          </motion.button>
+        </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
+          <div className="w-1 h-2 bg-primary rounded-full animate-bounce" />
+        </div>
+      </motion.div>
     </section>
   );
 };
