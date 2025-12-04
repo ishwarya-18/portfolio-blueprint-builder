@@ -25,21 +25,21 @@ const achievements = [
 
 const certificates = [
   {
-    title: "Flutter Development",
+    title: "Introduction to Flutter",
     platform: "Simplilearn",
-    image: "/certificates/flutter.png",
+    image: "/images/flutter.jpg",
     link: "#",
   },
   {
-    title: "Java Programming",
-    platform: "Coursera",
-    image: "/certificates/java.png",
+    title: "Microsoft AI Skills Challenge",
+    platform: "Microsoft",
+    image: "/images/microsoft.jpg",
     link: "#",
   },
   {
-    title: "Web Development",
-    platform: "Udemy",
-    image: "/certificates/web-dev.png",
+    title: "Google Analytics for Beginners",
+    platform: "Google",
+    image: "/images/analytics.jpg",
     link: "#",
   },
 ];
