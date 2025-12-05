@@ -28,12 +28,12 @@ const Navbar = () => {
         scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/50" : ""
       }`}
     >
-      <nav className="container-custom py-4 px-4 md:px-8 flex items-center justify-between">
-        <a href="#" className="font-display text-xl font-bold text-gradient">
+      <nav className="container-custom py-4 px-4 md:px-8 flex items-center justify-center relative">
+        <a href="#" className="font-display text-xl font-bold text-gradient absolute left-4 md:left-8">
           IR
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - Centered */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.label}>
@@ -51,7 +51,7 @@ const Navbar = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="md:hidden absolute right-4"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
