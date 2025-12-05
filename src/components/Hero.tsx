@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -5,6 +6,19 @@ const Hero = () => {
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const fullName = "Ishwarya R";
+  const [displayedName, setDisplayedName] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setDisplayedName(fullName.slice(0, index + 1));
+      index++;
+      if (index === fullName.length) clearInterval(interval);
+    }, 150); // typing speed in ms
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -35,9 +49,9 @@ const Hero = () => {
             transition={{ delay: 0.3 }}
             className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
           >
-            <span className="text-gradient glow-text">Ishwarya R</span>
+            <span className="text-gradient glow-text">{displayedName}</span>
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -45,16 +59,6 @@ const Hero = () => {
             className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto"
           >
             Pre-final Year Student | UI/UX & Full-Stack Enthusiast
-          </motion.p>
-          
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed"
-          >
-            Passionate about crafting intuitive user experiences, building scalable web applications, 
-            and solving real-world problems through code.
           </motion.p>
 
           {/* Social Links */}
@@ -69,7 +73,6 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 glass-card-hover rounded-full hover:text-primary transition-colors"
-              aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -78,14 +81,12 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 glass-card-hover rounded-full hover:text-primary transition-colors"
-              aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="mailto:ishwaryarajendran77@gmail.com"
               className="p-3 glass-card-hover rounded-full hover:text-primary transition-colors"
-              aria-label="Email"
             >
               <Mail className="w-5 h-5" />
             </a>
@@ -103,7 +104,6 @@ const Hero = () => {
           </motion.button>
         </motion.div>
       </div>
-
     </section>
   );
 };
