@@ -34,17 +34,33 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
-            <div className="relative pl-8 border-l-2 border-primary/30 space-y-4">
-              {journey.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, x: -20 }} animate={isVisible ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.3 + i * 0.1 }} className="relative">
-                  <div className="absolute -left-[41px] p-2 bg-primary/10 rounded-full border-2 border-primary"><item.icon className="w-4 h-4 text-primary" /></div>
-                  <div className="glass-card-hover p-4 rounded-xl">
-                    <p className="text-xs text-primary font-medium mb-1">{item.period}</p>
-                    <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.subtitle}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20" />
+              
+              <div className="space-y-6">
+                {journey.map((item, i) => (
+                  <motion.div 
+                    key={item.title} 
+                    initial={{ opacity: 0, x: -20 }} 
+                    animate={isVisible ? { opacity: 1, x: 0 } : {}} 
+                    transition={{ delay: 0.3 + i * 0.1 }} 
+                    className="relative flex items-start gap-4"
+                  >
+                    {/* Icon circle - perfectly aligned */}
+                    <div className="relative z-10 flex-shrink-0 w-10 h-10 flex items-center justify-center bg-card border-2 border-primary rounded-full shadow-lg shadow-primary/20">
+                      <item.icon className="w-4 h-4 text-primary" />
+                    </div>
+                    
+                    {/* Content card */}
+                    <div className="flex-1 glass-card-hover p-4 rounded-xl">
+                      <p className="text-xs text-primary font-medium mb-1">{item.period}</p>
+                      <h3 className="font-semibold mb-1">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} animate={isVisible ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="space-y-6">
