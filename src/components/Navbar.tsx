@@ -28,7 +28,7 @@ const Navbar = () => {
         scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/50" : ""
       }`}
     >
-      <nav className="container-custom py-4 px-4 md:px-8 flex items-center justify-between">
+      <nav className="w-full max-w-[1400px] mx-auto py-4 px-6 md:px-12 lg:px-16 flex items-center justify-between">
         <a href="#" className="font-display text-xl font-bold text-gradient">
           IR
         </a>
