@@ -28,19 +28,19 @@ const certificates = [
     title: "Introduction to Flutter",
     platform: "Simplilearn",
     image: "/images/flutter.jpg",
-    link: "#",
+    link: "https://simpli-web.app.link/e/JsrDEPBsQYb",
   },
   {
     title: "Microsoft AI Skills Challenge",
     platform: "Microsoft",
     image: "/images/microsoft.jpg",
-    link: "#",
+    link: "https://drive.google.com/file/d/1H7zkXek3y7YJBLk2CB6rxCbg9leATU8c/view?usp=drive_link",
   },
   {
     title: "Google Analytics for Beginners",
     platform: "Google",
     image: "/images/analytics.jpg",
-    link: "#",
+    link: "https://drive.google.com/file/d/1P6ns7iw2tuSJrCixawNVGVVp2K4xFfwW/view?usp=drive_link",
   },
 ];
 

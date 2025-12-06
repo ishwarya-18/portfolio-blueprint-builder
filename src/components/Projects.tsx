@@ -40,7 +40,7 @@ const projects = [
     fullDescription: "A robust task management application featuring secure user authentication, RESTful APIs for complete CRUD operations, and PostgreSQL database integration for reliable data persistence. The admin dashboard provides oversight capabilities for managing users and monitoring system usage, while the user interface offers a clean and efficient task management experience.",
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
     github: "https://github.com/ishwarya-18/Todo_application",
-    live: null,
+    live: "https://todo-frontend-5pp0.onrender.com/",
     image: "/images/todo.png",
     efficiency: 80,
   },
