@@ -31,7 +31,7 @@ const Experience = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-24"
         >
           <p className="text-primary font-medium tracking-wider uppercase text-sm mb-3">
             Where I've Worked

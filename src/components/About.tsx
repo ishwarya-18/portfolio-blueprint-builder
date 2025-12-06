@@ -20,7 +20,7 @@ const About = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section id="about" className="section-padding">
+<section id="about" className="section-padding" style={{ scrollMarginTop: "20px" }}>
       <div className="container-custom" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={isVisible ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}>
